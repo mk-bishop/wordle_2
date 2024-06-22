@@ -4,17 +4,23 @@ from django.contrib.auth.models import User
 # Create your models here.
 #models make the database tables
 
-#user model #followed a tutorial idk why it's called post
-#does it have a password? idk
-class Post(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=50)
-    content = models.TextField()
+#user model 
+#followed a tutorial idk why it's called post
+# class Post(models.Model):
+#     author = models.ForeignKey(User, on_delete=models.CASCADE)
+#     title = models.CharField(max_length=50)
+#     content = models.TextField()
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
+# Game Model:
 
+# Store information about each game session.
+# Fields may include: game ID, start time, end time, status (ongoing, completed), and a reference to the player(s) involved.
+
+class Game(models.Model):
+    start_time = models.DateTimeField
 #input field?
 
 #stats
@@ -23,10 +29,7 @@ class Post(models.Model):
 #possible solutions
 #accepted guesses
     
-# Game Model:
 
-# Store information about each game session.
-# Fields may include: game ID, start time, end time, status (ongoing, completed), and a reference to the player(s) involved.
 # Word Model:
 
 # Store words used in the game.
